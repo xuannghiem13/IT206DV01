@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" width="1100" height="750">
+  
+  <defs>
+    <filter id="shadow" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="1.5" dy="2.5" stdDeviation="2.5" flood-opacity="0.12" flood-color="#0F172A"/>
+    </filter>
+    <filter id="boxShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.06" flood-color="#0F172A"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563EB" />
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706" />
+    </marker>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="750" fill="#F8FAFC" />
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="1100" height="65" fill="url(#headerGrad)" />
+  <text x="30" y="32" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">BIỂU ĐỒ UML USE CASE - PHÂN HỆ BỘ PHẬN NHÂN SỰ (HR)</text>
+  <text x="30" y="52" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#E0E7FF">Quản lý thông tin hồ sơ nhân viên, phân công ca trực và theo dõi điểm danh chấm công</text>
+
+  <!-- Project Badge -->
+  <rect x="860" y="16" width="210" height="32" rx="6" fill="#1E293B" fill-opacity="0.4" stroke="#93C5FD" stroke-width="1"/>
+  <text x="965" y="36" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">ĐH HOA SEN • OOAD NHÓM 1</text>
+
+  
+    <rect x="260" y="85" width="790" height="630" rx="14" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2" filter="url(#boxShadow)"/>
+    <rect x="260" y="85" width="370" height="36" rx="14" fill="#EDE9FE" />
+    <text x="280" y="109" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#6D28D9">PHÂN HỆ QUẢN LÝ NHÂN SỰ &amp; CHẤM CÔNG (HR)</text>
+  
+    <g class="actor" transform="translate(130, 360)">
+      <circle cx="0" cy="-28" r="14" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2.5"/>
+      <line x1="0" y1="-14" x2="0" y2="18" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="-22" y1="-3" x2="22" y2="-3" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="0" y1="18" x2="-15" y2="46" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="0" y1="18" x2="15" y2="46" stroke="#6D28D9" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="-85" y="55" width="170" height="34" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+      <text x="0" y="70" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="13" fill="#0F172A">Bộ phận Nhân sự</text>
+      <text x="0" y="84" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748B">👥 HR Department</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="470" cy="170" rx="130" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="470" y="167" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Quản lý hồ sơ nhân viên</text><text x="470" y="183" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">(Xem danh sách &amp; tra cứu)</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="810" cy="170" rx="120" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="810" y="167" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Thêm, sửa, xóa &amp;</text><text x="810" y="183" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Cập nhật nhân viên</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="470" cy="300" rx="130" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="470" y="297" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Quản lý phòng ban &amp;</text><text x="470" y="313" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Cơ cấu chức vụ</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="810" cy="300" rx="120" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="810" y="297" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Theo dõi trạng thái</text><text x="810" y="313" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">làm việc của nhân viên</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="470" cy="440" rx="130" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="470" y="437" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Quản lý phân công ca trực</text><text x="470" y="453" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">(Ca hành chính / Ca đêm)</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="810" cy="440" rx="120" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="810" y="437" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Điểm danh &amp; Chấm công</text><text x="810" y="453" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">hàng ngày</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="470" cy="580" rx="130" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="470" y="577" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Theo dõi thông tin</text><text x="470" y="593" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">nghỉ phép / vắng mặt</text>
+    </g>
+  
+    <g class="use-case">
+      <ellipse cx="810" cy="580" rx="120" ry="30" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="810" y="577" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Tổng hợp ngày công &amp;</text><text x="810" y="593" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E3A8A">Đánh giá chuyên cần</text>
+    </g>
+  <line x1="190" y1="360" x2="340" y2="170" stroke="#6D28D9" stroke-width="1.6" /><line x1="190" y1="360" x2="340" y2="300" stroke="#6D28D9" stroke-width="1.6" /><line x1="190" y1="360" x2="340" y2="440" stroke="#6D28D9" stroke-width="1.6" /><line x1="190" y1="360" x2="340" y2="580" stroke="#6D28D9" stroke-width="1.6" />
+    <line x1="600" y1="170" x2="690" y2="170" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)" />
+    <rect x="607" y="153" width="76" height="18" rx="3" fill="#FFFFFF" fill-opacity="0.9" stroke="#E2E8F0" stroke-width="1"/>
+               <text x="645" y="166" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#2563EB">&lt;&lt;include&gt;&gt;</text>
+  
+    <line x1="690" y1="440" x2="600" y2="440" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)" />
+    <rect x="607" y="423" width="76" height="18" rx="3" fill="#FFFFFF" fill-opacity="0.9" stroke="#E2E8F0" stroke-width="1"/>
+               <text x="645" y="436" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#2563EB">&lt;&lt;include&gt;&gt;</text>
+  
+    <line x1="690" y1="580" x2="600" y2="580" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)" />
+    <rect x="607" y="563" width="76" height="18" rx="3" fill="#FFFFFF" fill-opacity="0.9" stroke="#E2E8F0" stroke-width="1"/>
+               <text x="645" y="576" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#2563EB">&lt;&lt;include&gt;&gt;</text>
+  
+
+  <!-- Footer Watermark -->
+  <text x="550" y="738" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94A3B8">Hệ thống Quản lý Căn hộ Dịch vụ &amp; Phòng trọ • Tài liệu Phân tích Thiết kế Hướng Đối Tượng (UML Use Case Specification)</text>
+</svg>

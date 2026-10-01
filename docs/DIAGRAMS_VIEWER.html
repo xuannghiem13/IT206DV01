@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư Viện Biểu Đồ UML Use Case - Quản Lý Căn Hộ Dịch Vụ (HSU)</title>
+  <style>
+    :root {
+      --primary: #1E40AF;
+      --primary-hover: #1D4ED8;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #0F172A;
+      --muted: #64748B;
+      --border: #E2E8F0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+    header {
+      background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+      color: white;
+      padding: 30px 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    p.subtitle { font-size: 14px; color: #DBEAFE; }
+    .badge {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .quick-nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-nav a {
+      text-decoration: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .quick-nav a:hover {
+      background: #EFF6FF;
+      border-color: #93C5FD;
+      color: var(--primary);
+    }
+    .diagram-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 35px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: #FAFAFA;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-outline {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: #F1F5F9; }
+    .image-wrapper {
+      padding: 24px;
+      background: #F1F5F9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: auto;
+    }
+    .image-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: white;
+      cursor: zoom-in;
+    }
+    /* Toast notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0F172A;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div>
+        <h1>HỆ THỐNG BIỂU ĐỒ UML USE CASE CHI TIẾT (HD / 2K)</h1>
+        <p class="subtitle">Đề tài: Quản lý Căn hộ Dịch vụ & Phòng trọ • Phân tích Hướng Đối Tượng (OOAD) • ĐH Hoa Sen (HSU)</p>
+      </div>
+      <div class="badge">Đã xuất định dạng Vector SVG & PNG 2K</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="quick-nav">
+      <a href="#dg-1">1. Sơ đồ Tổng thể Toàn Hệ thống</a>
+      <a href="#dg-2">2. Phân hệ Chủ trọ (Owner)</a>
+      <a href="#dg-3">3. Phân hệ Quản lý (Manager)</a>
+      <a href="#dg-4">4. Phân hệ Kỹ thuật (Technician)</a>
+      <a href="#dg-5">5. Phân hệ Kế toán (Accountant)</a>
+      <a href="#dg-6">6. Phân hệ Nhân sự (HR)</a>
+      <a href="#dg-7">7. Cổng Khách thuê (Tenant)</a>
+    </div>
+
+    <!-- 1. TỔNG THỂ -->
+    <div class="diagram-card" id="dg-1">
+      <div class="card-header">
+        <div>
+          <div class="card-title">1. Biểu Đồ UML Use Case Tổng Thể Toàn Hệ Thống</div>
+          <div class="card-desc">Bao quát 6 tác nhân chính (Chủ trọ, Quản lý, Kỹ thuật, Kế toán, Nhân sự, Người thuê) và Cổng thanh toán VietQR.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/01_use_case_tong_the.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/01_use_case_tong_the.png" download="01_use_case_tong_the.png">Tải PNG (2475x1770)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/01_use_case_tong_the.png" alt="Biểu đồ Use Case tổng thể">
+      </div>
+    </div>
+
+    <!-- 2. CHỦ TRỌ -->
+    <div class="diagram-card" id="dg-2">
+      <div class="card-header">
+        <div>
+          <div class="card-title">2. Phân Hệ Quản Trị Cấp Cao - Chủ Trọ (Owner)</div>
+          <div class="card-desc">Quản lý tài khoản, phân quyền, thiết lập biểu giá điện/nước/dịch vụ, giám sát phòng và xem báo cáo tài chính.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/02_use_case_chu_tro.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/02_use_case_chu_tro.png" download="02_use_case_chu_tro.png">Tải PNG (1650x1125)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/02_use_case_chu_tro.png" alt="Biểu đồ phân hệ Chủ trọ">
+      </div>
+    </div>
+
+    <!-- 3. QUẢN LÝ -->
+    <div class="diagram-card" id="dg-3">
+      <div class="card-header">
+        <div>
+          <div class="card-title">3. Phân Hệ Vận Hành Căn Hộ - Bộ Phận Quản Lý (Manager)</div>
+          <div class="card-desc">Sơ đồ phòng, hồ sơ khách thuê, hợp đồng, bàn giao, chốt số điện nước tự động và điều phối sự cố cho kỹ thuật.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/03_use_case_quan_ly.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/03_use_case_quan_ly.png" download="03_use_case_quan_ly.png">Tải PNG (1800x1275)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/03_use_case_quan_ly.png" alt="Biểu đồ phân hệ Quản lý">
+      </div>
+    </div>
+
+    <!-- 4. KỸ THUẬT -->
+    <div class="diagram-card" id="dg-4">
+      <div class="card-header">
+        <div>
+          <div class="card-title">4. Phân Hệ Xử Lý Sự Cố - Bộ Phận Kỹ Thuật (Technician)</div>
+          <div class="card-desc">Tiếp nhận phân công sửa chữa hỏng hóc, cập nhật trạng thái xử lý, ghi nhận vật tư và chi phí phát sinh.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/04_use_case_ky_thuat.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/04_use_case_ky_thuat.png" download="04_use_case_ky_thuat.png">Tải PNG (1650x1125)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/04_use_case_ky_thuat.png" alt="Biểu đồ phân hệ Kỹ thuật">
+      </div>
+    </div>
+
+    <!-- 5. KẾ TOÁN -->
+    <div class="diagram-card" id="dg-5">
+      <div class="card-header">
+        <div>
+          <div class="card-title">5. Phân Hệ Tài Chính & Doanh Thu - Bộ Phận Kế Toán (Accountant)</div>
+          <div class="card-desc">Lập hóa đơn tiền phòng/dịch vụ, xác nhận thanh toán chuyển khoản VietQR, thu tiền mặt, quản lý công nợ.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/05_use_case_ke_toan.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/05_use_case_ke_toan.png" download="05_use_case_ke_toan.png">Tải PNG (1725x1125)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/05_use_case_ke_toan.png" alt="Biểu đồ phân hệ Kế toán">
+      </div>
+    </div>
+
+    <!-- 6. NHÂN SỰ -->
+    <div class="diagram-card" id="dg-6">
+      <div class="card-header">
+        <div>
+          <div class="card-title">6. Phân Hệ Quản Lý Nhân Sự & Chấm Công - Bộ Phận Nhân Sự (HR)</div>
+          <div class="card-desc">Quản lý hồ sơ nhân viên (CRUD), phân công phòng ban chức vụ, điều phối ca trực và chấm công hàng ngày.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/06_use_case_nhan_su.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/06_use_case_nhan_su.png" download="06_use_case_nhan_su.png">Tải PNG (1650x1125)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/06_use_case_nhan_su.png" alt="Biểu đồ phân hệ Nhân sự">
+      </div>
+    </div>
+
+    <!-- 7. KHÁCH THUÊ -->
+    <div class="diagram-card" id="dg-7">
+      <div class="card-header">
+        <div>
+          <div class="card-title">7. Phân Hệ Cổng Tự Phục Vụ - Người Thuê Căn Hộ (Tenant Portal)</div>
+          <div class="card-desc">Tra cứu căn hộ & hợp đồng, xem hóa đơn & chỉ số điện nước, quét mã VietQR thanh toán 24/7 và gửi phản ánh sự cố.</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="diagrams/07_use_case_khach_thue.svg" target="_blank">Xem Vector SVG</a>
+          <a class="btn btn-primary" href="diagrams/07_use_case_khach_thue.png" download="07_use_case_khach_thue.png">Tải PNG (1650x1125)</a>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="diagrams/07_use_case_khach_thue.png" alt="Biểu đồ phân hệ Khách thuê">
+      </div>
+    </div>
+
+  </div>
+
+  <div id="toast">Đã sao chép!</div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+  </script>
+</body>
+</html>
